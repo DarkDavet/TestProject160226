@@ -40,9 +40,6 @@ public class SetupFSM: MonoBehaviourExtBind
     }
 
 
-    public void StartButton() => Settings.Invoke("OnStartClick");
-    public void StopButton() => Settings.Invoke("OnStopClick");
-
     [Bind("OnStartClick")]
     private void OnStartClick()
     {
