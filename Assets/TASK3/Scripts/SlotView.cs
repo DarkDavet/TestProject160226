@@ -35,19 +35,24 @@ public class SlotView: MonoBehaviourExtBind
     [Bind("AlignSlots")]
     private void AlignSlots()
     {
-        Debug.Log("SlotView: started aligning to the center");
-
         var targetPath = new CPath();
+        int count = items.Length;
+        float[] startY = new float[count];
+        float[] targetY = new float[count];
 
-        foreach (var item in items)
+        for (int i = 0; i < count; i++)
         {
-            float currentY = item.anchoredPosition.y;
-            float targetY = Mathf.Round(currentY / itemHeight) * itemHeight;
-
-            targetPath.EasingBounceEaseOut(0.5f, currentY, targetY, (f) => {
-                item.anchoredPosition = new Vector2(0, f);
-            });
+            startY[i] = items[i].anchoredPosition.y;
+            targetY[i] = Mathf.Round(startY[i] / itemHeight) * itemHeight;
         }
+
+        targetPath.EasingBounceEaseOut(0.5f, 0f, 1f, (f) => {
+            for (int i = 0; i < count; i++)
+            {
+                float currentPos = Mathf.Lerp(startY[i], targetY[i], f);
+                items[i].anchoredPosition = new Vector2(0, currentPos);
+            }
+        });
 
         this.Path = targetPath;
     }
