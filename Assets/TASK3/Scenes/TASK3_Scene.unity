@@ -1399,6 +1399,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1125224245}
+  - component: {fileID: 1125224246}
+  - component: {fileID: 1125224247}
   m_Layer: 5
   m_Name: SlotViewUI
   m_TagString: Untagged
@@ -1430,6 +1432,40 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 700, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1125224246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125224244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55e4376856b7b334e9fe59109c5aca45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonsManager
+  globalModel: 0
+--- !u!114 &1125224247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125224244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef2ead57be67b6f45bf6786287a5b083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotView
+  globalModel: 0
+  items:
+  - {fileID: 2028233699}
+  - {fileID: 606497541}
+  - {fileID: 446484900}
+  - {fileID: 1250500963}
+  - {fileID: 1770458301}
+  - {fileID: 342072114}
+  itemHeight: 250
 --- !u!1 &1166949092
 GameObject:
   m_ObjectHideFlags: 0
@@ -2218,7 +2254,6 @@ GameObject:
   - component: {fileID: 1792484327}
   - component: {fileID: 1792484330}
   - component: {fileID: 1792484329}
-  - component: {fileID: 1792484328}
   m_Layer: 5
   m_Name: scroll_panel
   m_TagString: Untagged
@@ -2245,27 +2280,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1792484328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1792484326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef2ead57be67b6f45bf6786287a5b083, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlotView
-  globalModel: 0
-  items:
-  - {fileID: 2028233699}
-  - {fileID: 606497541}
-  - {fileID: 446484900}
-  - {fileID: 1250500963}
-  - {fileID: 1770458301}
-  - {fileID: 342072114}
-  itemHeight: 250
 --- !u!114 &1792484329
 MonoBehaviour:
   m_ObjectHideFlags: 0
