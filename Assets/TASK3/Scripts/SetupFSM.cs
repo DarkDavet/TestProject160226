@@ -9,28 +9,26 @@ using UnityEngine;
 
 public class SetupFSM: MonoBehaviourExtBind
 {
-    private FSM fsm;
     [OnAwake]
     private void CreateFsm()
     {
-        fsm = new FSM();
-        Settings.Fsm = fsm;
-        fsm.Add(new IdleState());
-        fsm.Add(new SpinState());
-        fsm.Add(new StopState());
+        Settings.Fsm = new FSM();
+        Settings.Fsm.Add(new IdleState());
+        Settings.Fsm.Add(new SpinState());
+        Settings.Fsm.Add(new StopState());
     }
 
     [OnStart]
     private void StartFsm()
     {
-        fsm.Start("Idle");
+        Settings.Fsm.Start("Idle");
         Log.Debug("Fsm launched");
     }
 
     [OnUpdate]
     private void UpdateFsm()
     {
-        if (fsm != null) fsm.Update(Time.deltaTime);
+        Settings.Fsm.Update(Time.deltaTime);
 
         var slotsPath = Model.Get<CPath>("SlotsPath");
         if (slotsPath != null)
@@ -38,24 +36,17 @@ public class SetupFSM: MonoBehaviourExtBind
             slotsPath.Update(Time.deltaTime);
         }
     }
-
-
     [Bind("OnStartClick")]
     private void OnStartClick()
     {
-        if (fsm.CurrentStateName == "Idle")
-        {
-            fsm.Change("Spin");
-        }
+        Debug.Log("STAAAAARS");
+        Settings.Fsm.Change("Spin");
     }
 
     [Bind("OnStopClick")]
     private void OnStopClick()
     {
-        if (fsm.CurrentStateName == "Spin")
-        {
-            fsm.Change("Stop");
-        }    
-            
+        Debug.Log("STOOOOOP");
+        Settings.Fsm.Change("Stop");
     }
 }

@@ -18,6 +18,8 @@ public class IdleState: FSMState
         Model.Set("BtnStartEnable", true);
     }
 
+    
+
     [Exit]
     private void Exit()
     {

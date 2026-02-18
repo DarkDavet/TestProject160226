@@ -23,4 +23,11 @@ public class SpinState: FSMState
          .Action(() => Model.Set("BtnStopEnable", true));
         Model.Set("SlotsPath", path);
     }
+
+
+    [Exit]
+    private void Exit()
+    {
+        Debug.Log("Spin state exit");
+    }
 }
