@@ -12,8 +12,10 @@ public class IdleState: FSMState
     {
         Debug.Log("FSM: Idle enter");
         Model.Set("FsmState", "Idle");
-        Model.Set("IsCanStop", false);
         Model.Set("Speed", 0f);
+
+        Model.Set("BtnStopEnable", false); 
+        Model.Set("BtnStartEnable", true);
     }
 
     [Exit]

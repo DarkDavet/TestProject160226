@@ -52,7 +52,7 @@ public class SetupFSM: MonoBehaviourExtBind
     [Bind("OnStopClick")]
     private void OnStopClick()
     {
-        if (Model.Get<bool>("IsCanStop") && fsm.CurrentStateName == "Spin")
+        if (fsm.CurrentStateName == "Spin")
         {
             fsm.Change("Stop");
         }    

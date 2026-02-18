@@ -15,6 +15,7 @@ public class StopState: FSMState
         Model.Set("FsmState", "Stop");
         float speed = Model.Get<float>("Speed");
 
+
         var path = new CPath();
         path.EasingQuadEaseOut(0.6f, speed, 200f, (v) => Model.Set("Speed", v))
          .Action(() => Settings.Invoke("AlignSlots"))
