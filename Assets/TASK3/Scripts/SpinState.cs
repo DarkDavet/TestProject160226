@@ -24,6 +24,11 @@ public class SpinState: FSMState
         Model.Set("SlotsPath", path);
     }
 
+    [Bind("OnStopAction")]
+    private void SetStopState()
+    {
+        Parent.Change("Stop");
+    }
 
     [Exit]
     private void Exit()

@@ -19,10 +19,14 @@ public class StopState: FSMState
         var path = new CPath();
         path.EasingQuadEaseOut(0.6f, speed, 200f, (v) => Model.Set("Speed", v))
          .Action(() => Settings.Invoke("AlignSlots"))
-         .Action(() => Model.Set("Speed", 0f))
-         .Wait(0.6f)
-         .Action(() => Parent.Change("Idle"));
+         .Action(() => Model.Set("Speed", 0f));
         Model.Set("SlotsPath", path);
+    }
+
+    [One(0.6f)]
+    private void SetIdleState()
+    {
+        Parent.Change("Idle");
     }
 
     [Exit]

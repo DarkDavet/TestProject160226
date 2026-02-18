@@ -18,7 +18,11 @@ public class IdleState: FSMState
         Model.Set("BtnStartEnable", true);
     }
 
-    
+    [Bind("OnStartAction")]
+    private void SetSpinState()
+    {
+        Parent.Change("Spin");
+    }
 
     [Exit]
     private void Exit()

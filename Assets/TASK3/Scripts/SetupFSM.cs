@@ -36,17 +36,5 @@ public class SetupFSM: MonoBehaviourExtBind
             slotsPath.Update(Time.deltaTime);
         }
     }
-    [Bind("OnStartClick")]
-    private void OnStartClick()
-    {
-        Debug.Log("STAAAAARS");
-        Settings.Fsm.Change("Spin");
-    }
-
-    [Bind("OnStopClick")]
-    private void OnStopClick()
-    {
-        Debug.Log("STOOOOOP");
-        Settings.Fsm.Change("Stop");
-    }
+    
 }
