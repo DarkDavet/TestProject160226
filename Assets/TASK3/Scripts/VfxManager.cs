@@ -3,6 +3,7 @@ using AxGrid.Model;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using UnityEngine;
 
 public class VfxManager: MonoBehaviourExtBind
@@ -12,9 +13,6 @@ public class VfxManager: MonoBehaviourExtBind
     [Bind("ShowWinEffect")]
     private void ShowWinEffect()
     {
-        foreach (ParticleSystem effect in _effectsList)
-        { 
-            effect.Play(); 
-        }
+        _effectsList.ForEach(x => x.Play());
     }
 }
