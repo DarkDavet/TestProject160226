@@ -24,4 +24,10 @@ public class StopState: FSMState
          .Action(() => Parent.Change("Idle"));
         Model.Set("SlotsPath", path);
     }
+
+    [Exit]
+    private void Exit()
+    {
+        Settings.Invoke("ShowWinEffect");
+    }
 }
